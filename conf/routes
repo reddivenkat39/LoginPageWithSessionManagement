@@ -1,0 +1,22 @@
+
+# Home Page
+GET     /                           controllers.SigninPageController.signin
+
+#Map to validate the username and password
+GET     /validate                   controllers.SigninPageController.validate(username:String,password:String)
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+
+
+GET     /ps360signin           controllers.Assets.at(path="/public", file="javascripts/ps360signin.js")
+
+
+GET     /ps360signinpage       controllers.Assets.at(path="/public",file="html/ps360signinpage.html")
+
+
+
+GET   /userdetails               controllers.RestServiceProviderController.usersdata
+
+
+GET  /signout                    controllers.SigninPageController.signout
